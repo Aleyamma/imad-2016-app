@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var content={
+var articleone = {
 title: "Article-one:Aleyamma",
 heading: "Article-one",
 date: "25-sep-2016",
@@ -23,7 +23,9 @@ content:`<p> hii!!Welcome to article-one. Please wait..
 
 };
 
-
+var htmltemplate={
+    
+};
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
