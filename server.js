@@ -24,7 +24,37 @@ content:`<p> hii!!Welcome to article-one. Please wait..
 };
 
 var htmltemplate={
+    template :`<html>
+    <head>
+        <title>
+            Article One 
+        </title>
+    <meta name="viewport" content="width-device-width,initial-scale-1"/>
+    <link href="/ui/style.css" rel="stylesheet" />
+      
+    </head>
+    <body>
+        <div class="container">
+           <div>
+            <a href="/">Home</a> 
+           </div> 
+           <h3> Article One </h3>
+           <h5> Sep 16 2016 </h5>
+           <p> hii!!Welcome to article-one. Please wait..
+           <n> i am julie </n>
+           <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
+           </n>
+           <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
+           </n>
+           </p>
+            <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
+           </n>
     
+            <p>   hows your day?? </p>
+        </div>
+    </body>
+</html>`
+
 };
 
 app.get('/', function (req, res) {
