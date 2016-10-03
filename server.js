@@ -5,9 +5,31 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var content={
+title: "Article-one:Aleyamma",
+heading: "Article-one",
+date: "25-sep-2016",
+content:`<p> hii!!Welcome to article-one. Please wait..
+           <n> i am julie </n>
+           <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
+           </n>
+           <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
+           </n>
+           </p>
+            <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
+           </n>
+    
+            <p>   hows your day?? </p>`
+
+};
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
+
 
 app.get('/article-one',function(req,res)
 {
