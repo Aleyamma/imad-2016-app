@@ -5,11 +5,12 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone = {
-title: "Article-one:Aleyamma",
-heading: "Article-one",
-date: "25-sep-2016",
-content:`<p> hii!!Welcome to article-one. Please wait..
+var articles = {
+    'article-one':{
+            title: "Article-one:Aleyamma",
+            heading: "Article-one",
+            date: "25-sep-2016",
+            content:`<p> hii!!Welcome to article-one. Please wait..
            <n> i am julie </n>
            <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
            </n>
@@ -21,6 +22,37 @@ content:`<p> hii!!Welcome to article-one. Please wait..
     
             <p>   hows your day?? </p>`
 
+            },
+    'article-two':{ 
+            title: "Article-Two:Aleyamma",
+            heading: "Article-Two",
+            date: "5-NOV-2016",
+            content:`<p> hii!!Welcome to article-Two. Please wait..
+           <n> i am julie </n>
+           <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
+           </n>
+           <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
+           </n>
+           </p>
+            <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
+           </n>
+    
+            <p>   hows your day?? </p>`  },
+    'article-three':{
+            title: "Article-Three:Aleyamma",
+            heading: "Article-Three",
+            date: "25-sep-2016",
+            content:`<p> hii!!Welcome to article-Three. Please wait..
+           <n> i am julie </n>
+           <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
+           </n>
+           <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
+           </n>
+           </p>
+            <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
+           </n>
+    
+            <p>   hows your day?? </p>`}
 };
 function createTemplate(data){
     var title=data.title;
@@ -56,10 +88,11 @@ app.get('/', function (req, res) {
 
 
 
-app.get('/article-one',function(req,res)
+app.get('/:articleName',function(req,res)
 {
  // res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
- res.send(createTemplate(articleone));
+ var articleName=req.params.articleName
+  res.send(createTemplate(articles[articleName]));
 });
 app.get('/article-two',function(req,res)
 {
