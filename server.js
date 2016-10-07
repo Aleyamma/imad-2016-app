@@ -22,12 +22,15 @@ content:`<p> hii!!Welcome to article-one. Please wait..
             <p>   hows your day?? </p>`
 
 };
-
-var htmltemplate={
-    template :`<html>
+function createTemplate(data){
+    var title=data.title;
+    var heading=data.heading;
+    var date=data.date;
+    var content=data.content;
+var htmlTemplate=`<html>
     <head>
         <title>
-            Article One 
+           ${title}
         </title>
     <meta name="viewport" content="width-device-width,initial-scale-1"/>
     <link href="/ui/style.css" rel="stylesheet" />
@@ -38,24 +41,14 @@ var htmltemplate={
            <div>
             <a href="/">Home</a> 
            </div> 
-           <h3> Article One </h3>
-           <h5> Sep 16 2016 </h5>
-           <p> hii!!Welcome to article-one. Please wait..
-           <n> i am julie </n>
-           <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
-           </n>
-           <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
-           </n>
-           </p>
-            <n>nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.nice to see you.
-           </n>
-    
-            <p>   hows your day?? </p>
+           <h3> ${heading}</h3>
+           <h5> ${date} </h5>
+${content}
         </div>
     </body>
-</html>`
-
-};
+</html>`;
+return htmlTemplate;
+}
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -65,7 +58,8 @@ app.get('/', function (req, res) {
 
 app.get('/article-one',function(req,res)
 {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+ // res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+ res.send(createTemplate(articleone));
 });
 app.get('/article-two',function(req,res)
 {
