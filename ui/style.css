@@ -26,3 +26,11 @@ font-family: sans-serif;
 padding-left:40px;
 padding-right:40px;
 }
+.intro{
+   max-width:500px;
+margin: 0 auto;
+color: blue;
+font-family: sans-serif;
+padding-left:40px;
+padding-right:40px; 
+}
