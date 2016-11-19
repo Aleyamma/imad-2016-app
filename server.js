@@ -103,7 +103,13 @@ app.get('/counter',function(req,res){
 });
 var pool = new Pool(config);
 app.get('/test-db',function(req,res){
-
+Pool.query('Select * from Article',function(err,result){
+    if (err) {
+        res.status(500).send(err.Tostring());
+    }else{
+        res.send(JSON.stringify(result));
+    }
+});
 });
 
 app.get('/:articleName',function(req,res)
