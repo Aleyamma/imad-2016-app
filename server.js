@@ -6,7 +6,7 @@ var config = {
   host: 'db.imad.hasura-app.io',
   port: '5432',
   user: 'aleyamma',
-  password: process.env.DB-PASSWORD,
+  password: process.env.DB_PASSWORD,
   database: 'aleyamma',
 };
 var app = express();
@@ -107,7 +107,7 @@ Pool.query('Select * from Article',function(err,result){
     if (err) {
         res.status(500).send(err.Tostring());
     }else{
-        res.send(JSON.stringify(result));
+        res.send(JSON.stringify(result.rows));
     }
 });
 });
