@@ -112,11 +112,11 @@ Pool.query('Select * from Article',function(err,result){
 });
 });
 
-app.get('/:articleName',function(req,res)
+app.get('/article/:articleName',function(req,res)
 {
  // res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
- var articleName=req.params.articleName;
-  res.send(createTemplate(articles[articleName]));
+Pool.query("Select * from article where title ='"+ req.params.articleName +"'");
+  res.send(createTemplate(articledata));
 });
 app.get('/article-two',function(req,res)
 {
