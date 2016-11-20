@@ -115,7 +115,7 @@ pool.query('Select * from Article',function(err,result){
 app.get('/article/:articleName',function(req,res)
 {
  // res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
-Pool.query("Select * from article where title ='"+ req.params.articleName +"'",function(err,result){
+pool.query("Select * from article where title ='"+ req.params.articleName +"'",function(err,result){
     if(err) {
         res.status(500).send(err.Tostring());
     }else{
