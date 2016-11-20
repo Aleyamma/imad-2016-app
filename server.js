@@ -115,7 +115,18 @@ Pool.query('Select * from Article',function(err,result){
 app.get('/article/:articleName',function(req,res)
 {
  // res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
-Pool.query("Select * from article where title ='"+ req.params.articleName +"'");
+Pool.query("Select * from article where title ='"+ req.params.articleName +"'",function(err,result){
+    if(err) {
+        res.status(500).send(err.Tostring());
+    }else{
+        if (result.rows.length===0){
+            res.statss(404).send('Árticle not found');
+        }else{
+            var articleData=result.rows[0];
+            res.send(createTemplate(articleData));
+        }
+    }
+});
   res.send(createTemplate(articledata));
 });
 app.get('/article-two',function(req,res)
