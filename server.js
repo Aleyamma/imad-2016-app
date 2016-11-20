@@ -103,7 +103,7 @@ app.get('/counter',function(req,res){
 });
 var pool = new Pool(config);
 app.get('/test-db',function(req,res){
-Pool.query('Select * from Article',function(err,result){
+pool.query('Select * from Article',function(err,result){
     if (err) {
         res.status(500).send(err.Tostring());
     }else{
@@ -127,7 +127,7 @@ Pool.query("Select * from article where title ='"+ req.params.articleName +"'",f
         }
     }
 });
-  res.send(createTemplate(articledata));
+  //res.send(createTemplate(articledata));
 });
 app.get('/article-two',function(req,res)
 {
