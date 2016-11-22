@@ -93,7 +93,7 @@ var counter=0;
 app.get('/', function (req, res) {
     counter=counter+1;
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-  
+  res.send(counter.tostring());
 });
 
 
