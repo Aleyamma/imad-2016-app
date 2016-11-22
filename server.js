@@ -97,9 +97,10 @@ app.get('/counter', function (req, res) {
 });
 
 
-app.get('/counter',function(req,res){
-  counter=counter+1;
-  res.send(counter.tostring());
+app.get('/',function(req,res){
+ // counter=counter+1;
+  //res.send(counter.tostring());
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 var pool = new Pool(config);
 app.get('/test-db',function(req,res){
