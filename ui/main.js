@@ -12,6 +12,6 @@ button.onclick= function(){
         }
     };
     //counter=counter+1;
-    request.open('GET','http://aleyamma.imad.hasura-app.io/',true);
+    request.open('GET','http://aleyamma.imad.hasura-app.io/counter',true);
     request.send(null);
 };
